@@ -99,12 +99,11 @@
     <div class="results" id="results"></div>
 
     <div class="player-wrapper" id="playerWrapper">
-        <iframe id="player" src="" allowfullscreen></iframe>
+        <iframe id="player" src="" allowfullscreen sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
     </div>
 </div>
 
 <script>
-    // Get a free Read-Only Access Token or API Key from developers.themoviedb.org
     const TMDB_API_KEY = '670f376983f73b67d757e9a951a3a5a9'; 
 
     async function searchMovies() {
@@ -145,11 +144,9 @@
         const playerWrapper = document.getElementById('playerWrapper');
         const player = document.getElementById('player');
         
-        // Dynamically generating the target embed URL via TMDB ID
         player.src = `https://vidsrc.to/embed/movie/${tmdbId}`;
         playerWrapper.style.display = 'block';
         
-        // Auto-scroll down to video player
         playerWrapper.scrollIntoView({ behavior: 'smooth' });
     }
 </script>
